@@ -1,0 +1,119 @@
+@use './styles/variables.scss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper-light);
+  color: var(--text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  /* Handmade ivory paper subtle noise / warm texture */
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(198, 164, 106, 0.035) 0%, transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(167, 83, 59, 0.03) 0%, transparent 40%),
+    linear-gradient(to bottom, #FCFAF6, #FBF8F3 50%, #FAF6F0 100%);
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings Typography per Brand Guidelines */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-espresso);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Hairlines per Brand Brief: thin gold hairlines */
+.gold-hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(198, 164, 106, 0.5) 25%, rgba(198, 164, 106, 0.8) 50%, rgba(198, 164, 106, 0.5) 75%, transparent 100%);
+  width: 100%;
+  border: none;
+  margin: 2rem 0;
+}
+
+.gold-hairline-sm {
+  width: 80px;
+  height: 1px;
+  background: var(--color-antique-gold);
+  margin: 1.25rem auto;
+}
+
+/* Paper texture card utility */
+.paper-card {
+  background: var(--color-warm-cream);
+  border: 1px solid var(--border-gold-subtle);
+  border-radius: 12px;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+}
+
+.paper-card:hover {
+  border-color: var(--color-antique-gold);
+  box-shadow: var(--shadow-gold-hover);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-warm-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-antique-gold);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta);
+}

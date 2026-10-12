@@ -1,0 +1,46 @@
+// RAJAS BESTOWALS - Official Brand Design Variables (per PDF Brief)
+
+:root {
+  // Official Brand Palette
+  --color-terracotta: #A7533B;
+  --color-soft-ivory: #FDFEFF;
+  --color-warm-cream: #F4EEE6;
+  --color-antique-gold: #C6A46A;
+  --color-espresso: #3A241D;
+
+  // Supporting Luxury Tones
+  --color-paper-light: #FCFAF6;
+  --color-paper-card: #FFFFFF;
+  --color-gold-light: #E8DCC4;
+  --color-gold-bright: #D8B77D;
+  --color-gold-deep: #A08047;
+  --color-terracotta-dark: #8C402B;
+  --color-terracotta-light: #F7ECE8;
+  --color-sage: #5B7553;
+  --color-sage-light: #EEF3EC;
+  --color-blush: #8B5E66;
+  --color-blush-light: #F8EDEF;
+
+  // Text & Hairline Colors
+  --text-primary: #3A241D;
+  --text-muted: #6E5E58;
+  --text-light: #9B8C86;
+  --border-gold-subtle: rgba(198, 164, 106, 0.35);
+  --border-gold-strong: rgba(198, 164, 106, 0.75);
+  --border-light: rgba(58, 36, 29, 0.08);
+
+  // Fonts
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel', 'Cormorant Garamond', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  // Shadows & Glows
+  --shadow-subtle: 0 4px 20px -2px rgba(58, 36, 29, 0.05);
+  --shadow-card: 0 12px 32px -6px rgba(58, 36, 29, 0.08);
+  --shadow-gold-hover: 0 0 25px rgba(198, 164, 106, 0.32), 0 15px 35px -8px rgba(58, 36, 29, 0.12);
+  --shadow-terracotta: 0 8px 24px rgba(167, 83, 59, 0.28);
+
+  // Layout & Spacing
+  --max-content-width: 1320px;
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}

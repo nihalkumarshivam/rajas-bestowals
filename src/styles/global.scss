@@ -1,0 +1,336 @@
+@use './variables.scss';
+@use './navbar.scss';
+@use './hero.scss';
+@use './components.scss';
+
+/* ==========================================================================
+   RAJAS BESTOWALS - ROYAL LUXURY & HERITAGE STYLESHEET
+   Based on the official Brand & Website Design Brief
+   ========================================================================== */
+
+/* 1. BUTTONS & INTERACTIVE ELEMENTS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-terracotta {
+  background-color: var(--color-terracotta);
+  color: var(--color-soft-ivory);
+  box-shadow: 0 4px 14px rgba(167, 83, 59, 0.25);
+
+  &:hover {
+    background-color: var(--color-terracotta-dark);
+    box-shadow: 0 6px 20px rgba(167, 83, 59, 0.38);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #DFCCA6 0%, #C6A46A 60%, #B89255 100%);
+  color: var(--color-espresso);
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(198, 164, 106, 0.3);
+
+  &:hover {
+    background: linear-gradient(135deg, #E6D8B8 0%, #D4AF37 60%, #C6A46A 100%);
+    box-shadow: 0 6px 22px rgba(198, 164, 106, 0.45);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--color-espresso);
+  border-color: var(--color-antique-gold);
+
+  &:hover {
+    background-color: rgba(198, 164, 106, 0.12);
+    border-color: var(--color-antique-gold);
+    color: var(--color-espresso);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-outline-terracotta {
+  background: transparent;
+  color: var(--color-terracotta);
+  border-color: var(--color-terracotta);
+
+  &:hover {
+    background-color: var(--color-terracotta);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+}
+
+.btn-sm {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
+}
+
+.btn-md {
+  padding: 0.75rem 1.45rem;
+  font-size: 0.92rem;
+}
+
+.btn-lg {
+  padding: 1.1rem 2.25rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+}
+
+/* 2. SECTION HEADERS WITH SUBTLE ROYAL GOLD ORNAMENT */
+.section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3.5rem;
+
+  .section-tag {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    margin-bottom: 0.75rem;
+    position: relative;
+
+    &::before, &::after {
+      content: "◆";
+      font-size: 0.65rem;
+      color: var(--color-antique-gold);
+      margin: 0 0.5rem;
+      vertical-align: middle;
+    }
+  }
+
+  .section-title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    color: var(--color-espresso);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+}
+
+/* 3. SECTION CONTAINER SPACING - Plenty of white space per brief */
+.site-section {
+  padding: 6rem 0;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+}
+
+/* 4. WATERMARK BACKGROUND */
+.lotus-watermark-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  opacity: 0.038;
+  color: var(--color-espresso);
+  pointer-events: none;
+  z-index: 0;
+
+  @media (max-width: 768px) {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+/* 5. LUXURY CARDS WITH GOLD GLOW HOVER */
+.luxury-card {
+  background: var(--color-soft-ivory);
+  border: 1px solid var(--border-gold-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+
+  &:hover {
+    border-color: var(--color-antique-gold);
+    box-shadow: var(--shadow-gold-hover);
+    transform: translateY(-6px);
+  }
+}
+
+/* 6. PILL BADGES */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(198, 164, 106, 0.15);
+  color: #7A5822;
+  border: 1px solid rgba(198, 164, 106, 0.4);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-terracotta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(167, 83, 59, 0.12);
+  color: var(--color-terracotta-dark);
+  border: 1px solid rgba(167, 83, 59, 0.35);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* 7. NUTRITION FACTS TABLE PANEL (Page 5 & Page 7) */
+.nutrition-facts-box {
+  background: #FCFAF6;
+  border: 1px solid rgba(198, 164, 106, 0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-family: var(--font-sans);
+
+  .nutrition-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--color-espresso);
+    padding-bottom: 0.35rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-espresso);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    span {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+  }
+
+  .nutrition-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(58, 36, 29, 0.08);
+    font-size: 0.88rem;
+
+    &.bold {
+      font-weight: 600;
+      color: var(--color-espresso);
+    }
+
+    &.sub {
+      padding-left: 1rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+  }
+}
+
+/* 8. STEP INDICATOR BAR (Page 11) */
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+
+  .step-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--border-gold-subtle);
+      background: var(--color-warm-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+    }
+
+    &.active {
+      color: var(--color-espresso);
+
+      .step-number {
+        background: var(--color-terracotta);
+        color: #fff;
+        border-color: var(--color-terracotta);
+        box-shadow: 0 0 12px rgba(167, 83, 59, 0.35);
+      }
+    }
+
+    &.completed {
+      color: var(--color-terracotta);
+
+      .step-number {
+        background: var(--color-antique-gold);
+        color: #fff;
+        border-color: var(--color-antique-gold);
+      }
+    }
+  }
+
+  .step-connector {
+    width: 48px;
+    height: 1px;
+    background: var(--border-gold-subtle);
+
+    @media (max-width: 600px) {
+      width: 20px;
+    }
+  }
+}
+
+/* Utilities */
+.w-100 { width: 100%; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.color-terracotta { color: var(--color-terracotta); }
+.color-espresso { color: var(--color-espresso); }
+.color-sage { color: var(--color-sage); }
+.font-weight-bold { font-weight: 700; }
+.text-capitalize { text-transform: capitalize; }
